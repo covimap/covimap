@@ -30,15 +30,6 @@
       <div class="col-8">
         <div id="disqus_thread"></div>
 <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
     (function() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
     s.src = 'https://https-covimap-github-io.disqus.com/embed.js';
@@ -49,6 +40,36 @@
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   <div class="col-2"></div>
 </div>
-</div>     
+</div>
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+	<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+		<div class="toast-header">
+			<img src="https://covimap.github.io/favicon.ico" class="rounded me-2" width="24px" alt="...">
+			<strong class="me-auto">Utilisation</strong>
+			<small>Fermer</small>
+			<button type="button" id="liveToastBtn" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+		</div>
+		<div class="toast-body">
+			<b>Se déplacer sur la carte :</b> Clic Droit <br>
+			<b>Zoomer :</b> Ctrl + / Ctrl - <br>
+			<b>Lire les notes des éléments :</b> Appuyer sur les <svg width="12px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M 5 6 L 5 8 L 27 8 L 27 6 L 5 6 z M 5 12 L 5 14 L 27 14 L 27 12 L 5 12 z M 5 18 L 5 20 L 27 20 L 27 18 L 5 18 z M 5 24 L 5 26 L 21 26 L 21 24 L 5 24 z"></path></svg>
+		</div>
+	</div>
+	</div>
+  <script type="text/javascript">
+		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+			var astuces = document.querySelectorAll('.toast');
+			astuces[0].style.display ="none";
+		}else{
+			var astuces = document.querySelectorAll('.toast');
+			astuces[0].style.display ="block";
+			var astucesTrigger = document.getElementById('liveToastBtn')
+			if (astucesTrigger) {
+			  astucesTrigger.addEventListener('click', function () {
+			    astuces[0].style.display ="none";
+			  })
+			}
+		}
+	</script>
 </body>
 </html>
